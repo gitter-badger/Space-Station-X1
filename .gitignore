@@ -1,0 +1,6 @@
+*.csproj
+*.sln
+*.speccache
+*/obj
+*/bin
+*.suo

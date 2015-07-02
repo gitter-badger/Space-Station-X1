@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Name="SSServer" Path="SSServer" Type="Console">
-<!-- The server for the game, maintains world state and message passing. Console only. -->
+  <!-- The server for the game, maintains world state and message passing. Console only. -->
   <Properties>
     <RootNamespace>SSCyg.Server</RootNamespace>
     <!-- Get rid of the goddamn xml warnings -->
@@ -13,5 +13,8 @@
     <Reference Include="System" />
     <Reference Include="SSCore" />
   </References>
-  <Files />
+  <Files>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </Files>
 </Project>

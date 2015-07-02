@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Name="SSClient" Path="SSClient" Type="Console">
-<!-- The client for the game, with the rendering and client-side logic code. -->
+  <!-- The client for the game, with the rendering and client-side logic code. -->
   <Properties>
     <RootNamespace>SSCyg.Client</RootNamespace>
     <!-- Get rid of the goddamn xml warnings -->
@@ -14,5 +14,8 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="SSCore" />
   </References>
-  <Files />
+  <Files>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </Files>
 </Project>

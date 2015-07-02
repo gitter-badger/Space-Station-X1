@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Name="SSCore" Path="SSCore" Type="Library">
-<!-- Core classes shared between the client and server. -->
+  <!-- Core classes shared between the client and server. -->
   <Properties>
     <RootNamespace>SSCyg.Core</RootNamespace>
     <!-- Get rid of the goddamn xml warnings -->
@@ -12,5 +12,7 @@
   <References>
     <Reference Include="System" />
   </References>
-  <Files />
+  <Files>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </Files>
 </Project>
