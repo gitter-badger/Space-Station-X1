@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModuleInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>SpaceStationX1</Name>
+  <ModuleAssemblies />
+  <DefaultAction>sync</DefaultAction>
+  <DisableSynchronisation>false</DisableSynchronisation>
+  <DefaultStartupProject>SSClient</DefaultStartupProject>
+  <SupportedPlatforms>Windows</SupportedPlatforms>
+  <DefaultWindowsPlatforms>Windows</DefaultWindowsPlatforms>
+</ModuleInfo>

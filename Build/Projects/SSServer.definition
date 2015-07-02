@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Name="SSServer" Path="SSServer" Type="Console">
+<!-- The server for the game, maintains world state and message passing. Console only. -->
+  <Properties>
+    <RootNamespace>SSCyg.Server</RootNamespace>
+    <!-- Get rid of the goddamn xml warnings -->
+    <NoWarn>1591</NoWarn>
+    <CustomDefinitions>
+      <Platform Name="Windows">WINDOWS</Platform>
+    </CustomDefinitions>
+  </Properties>
+  <References>
+    <Reference Include="System" />
+    <Reference Include="SSCore" />
+  </References>
+  <Files />
+</Project>
