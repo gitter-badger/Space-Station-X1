@@ -11,7 +11,7 @@ namespace SSCyg.Client
 			List<string> commandLine = new List<string>(Environment.GetCommandLineArgs());
 			commandLine.RemoveAt(0); // Remove program name
 
-			// TODO: Process all command line args for the client and the core library
+			// TODO: Process all command line args for the client and the core library, open logger
 
 			Client client = null;
 			try
