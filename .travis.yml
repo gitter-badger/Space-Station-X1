@@ -1,0 +1,4 @@
+language: csharp
+solution: SpaceStationX1.Linux.sln
+install:
+  - mono Protobuild.exe --generate Linux

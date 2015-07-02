@@ -5,6 +5,7 @@
   <DefaultAction>sync</DefaultAction>
   <DisableSynchronisation>false</DisableSynchronisation>
   <DefaultStartupProject>SSClient</DefaultStartupProject>
-  <SupportedPlatforms>Windows</SupportedPlatforms>
+  <SupportedPlatforms>Windows,Linux</SupportedPlatforms>
   <DefaultWindowsPlatforms>Windows</DefaultWindowsPlatforms>
+  <DefaultLinuxPlatforms>Linux</DefaultLinuxPlatforms>
 </ModuleInfo>
