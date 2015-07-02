@@ -1,13 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace SSCyg.Core
+namespace SSCyg.Client
 {
 	class Program
 	{
 
-		public static void Main(string[] args)
+		static void Main()
 		{
+			List<string> commandLine = new List<string>(Environment.GetCommandLineArgs());
+			commandLine.RemoveAt(0); // Remove program name
 
+			// TODO: Process all command line args for the client and the core library
+
+			Client client = null;
+			try
+			{
+				client = new Client();
+				client.Run();
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Runtime Exception: " + e);
+			}
+			finally
+			{
+				client.Dispose();
+			}
+
+			// TODO: Core library shutdown if needed
 		}
 
 	}

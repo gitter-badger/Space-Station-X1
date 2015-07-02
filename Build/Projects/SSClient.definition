@@ -17,6 +17,7 @@
     <Reference Include="monogame" />
   </References>
   <Files>
+    <Compile Include="Client.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </Files>
