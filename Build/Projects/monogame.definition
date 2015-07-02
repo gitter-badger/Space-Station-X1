@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExternalProject Name="monogame">
+
+  <!-- This includes the Monogame and friends libraries, MonoGame.Framework.dll, OpenTK.dll, TaoSdl.dll -->
+
+  <Platform Type="Windows">
+    <Binary Name="MonoGame.Framework" Path="ThirdParty/Windows/MonoGame.Framework.dll" />
+    <Binary Name="OpenTK" Path="ThirdParty/Windows/OpenTK.dll" />
+  </Platform>
+
+  <Platform Type="Linux">
+    <Binary Name="MonoGame.Framework" Path="ThirdParty/Linux/MonoGame.Framework.dll" />
+    <Binary Name="OpenTK" Path="ThirdParty/Linux/OpenTK.dll" />
+    <Binary Name="Tao.Sdl" Path="ThirdParty/Linux/Tao.Sdl.dll" />
+  </Platform>
+
+</ExternalProject>

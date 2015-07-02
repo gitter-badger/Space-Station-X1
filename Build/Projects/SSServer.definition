@@ -13,6 +13,7 @@
   <References>
     <Reference Include="System" />
     <Reference Include="SSCore" />
+    <Reference Include="monogame" />
   </References>
   <Files>
     <Compile Include="Program.cs" />
