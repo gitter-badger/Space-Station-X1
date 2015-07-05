@@ -65,8 +65,7 @@ namespace SSCyg.Core
 
 			if (IsThreaded) // If it is threaded, more to do
 			{
-				// These four lines allow the streamWriter to be recycled to the log thread for proper ownership
-				streamWriter.BaseStream.Close();
+				// These lines allow the streamWriter to be recycled to the log thread for proper ownership
 				streamWriter.Close();
 				streamWriter.Dispose();
 				streamWriter = null;
@@ -137,7 +136,6 @@ namespace SSCyg.Core
 			goto func_start;
 
 		func_end:
-			streamWriter.BaseStream.Close();
 			streamWriter.Close();
 			streamWriter.Dispose();
 		}

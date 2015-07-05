@@ -10,6 +10,7 @@ namespace SSCyg.Core
 	public static partial class Debug
 	{
 		#region Message Boxes
+		// These return true if the user pressed OK, false if the user pressed Cancel
 		// Pops up an information message box with the given title and message. Will suspend the application.
 		public static bool ShowMessageBox(string title, string message)
 		{

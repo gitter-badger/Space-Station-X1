@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SSCyg.Core;
 
 namespace SSCyg.Client
 {
@@ -11,7 +12,7 @@ namespace SSCyg.Client
 			List<string> commandLine = new List<string>(Environment.GetCommandLineArgs());
 			commandLine.RemoveAt(0); // Remove program name
 
-			// TODO: Process all command line args for the client and the core library, open logger
+			SSCore.Initialize(commandLine, false);
 
 			Client client = null;
 			try
@@ -21,14 +22,17 @@ namespace SSCyg.Client
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Runtime Exception: " + e);
+				Debug.Log(LogLevel.Fatal, "A runtime exception was caught and unhandled.");
+				Debug.LogException(e);
+				bool ok = Debug.ShowErrorBox("Unhandled Exception", "\"" + e.Message + "\"\n" + e.StackTrace.Replace("\n", "\n\t"));
+				Debug.Log("User pressed " + (ok ? "OK" : "CANCEL") + " for the error window.");
 			}
 			finally
 			{
 				client.Dispose();
 			}
 
-			// TODO: Core library shutdown if needed
+			SSCore.Shutdown();
 		}
 
 	}

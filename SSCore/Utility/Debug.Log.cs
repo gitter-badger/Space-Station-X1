@@ -34,8 +34,6 @@ namespace SSCyg.Core
 		#region Members
 		// If the debug is outputting logger lines to a log file.
 		public static bool IsUsingFileLogging { get; private set; }
-		// If the debug is outputting logger lines to the console.
-		public static bool IsUsingConsoleLogging { get; private set; }
 		// If the logger is threaded.
 		public static bool IsUsingThreadedLogging { get { return _LogThread.IsThreaded; } }
 		// If the logger is open.
@@ -54,17 +52,16 @@ namespace SSCyg.Core
 		//			*nix platforms always have piping and terminals available, if needed
 		// useFile: if there should be file logging
 		// isThreaded: if the file logger should be multithreaded
-		internal static void OpenLogger(bool useConsole, bool useFile, bool isThreaded)
+		internal static void OpenLogger(bool useFile, bool isThreaded)
 		{
 			if (IsLoggerOpen)
 				return;
 
-			IsUsingConsoleLogging = useConsole;
 			IsUsingFileLogging = useFile;
 
 			if (useFile)
 			{
-				_LogThread.OpenThread("SSX1Client.log", isThreaded);
+				_LogThread.OpenThread(SSCore.IsServer ? "SSX1Server.log" : "SSX1Client.log", isThreaded);
 			}
 
 			IsLoggerOpen = true;
@@ -116,8 +113,7 @@ namespace SSCyg.Core
 			if (IsLoggerOpen)
 			{
 				string log = ll + ts + ":\t" + str;
-				if (IsUsingConsoleLogging)
-					Console.WriteLine(log);
+				Console.WriteLine(log);
 				if (IsUsingFileLogging)
 					_LogThread.AddString(log);
 			}
@@ -168,8 +164,7 @@ namespace SSCyg.Core
 
 			if (IsLoggerOpen)
 			{
-				if (IsUsingConsoleLogging)
-					Console.WriteLine(log);
+				Console.WriteLine(log);
 				if (IsUsingFileLogging)
 					_LogThread.AddString(log);
 			}
