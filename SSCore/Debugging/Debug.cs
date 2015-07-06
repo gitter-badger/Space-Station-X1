@@ -9,6 +9,12 @@ namespace SSCyg.Core
 	// for performance gains.
 	public static partial class Debug
 	{
+		static Debug()
+		{
+			currentBlock = rootBlock = new Debugging.ProfileBlock(null, "Root");
+			TotalFrames = 0;
+		}
+
 		#region Message Boxes
 		// These return true if the user pressed OK, false if the user pressed Cancel
 		// Pops up an information message box with the given title and message. Will suspend the application.

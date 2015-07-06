@@ -7,5 +7,6 @@ This project is written in C# on the .NET framework, using the Monogame graphics
 The following is a list of command line arguments that affect the core library, and application. Custom command line arguments will not break the application, and custom content packs can process command line arguments as well when they start up. Optional arguments are denoted with `<>`.
 
 * **Core**
-  * `-nf`, `--no-file`: Keeps the logger from outputting to a file.
-  * `-nt`, `--no-thread`: Stops the logger from using a separate thread.
+  * `-nlf`, `--no-log-file`: Keeps the logger from outputting to a file.
+  * `-nlt`, `--no-log-thread`: Stops the logger from using a separate thread.
+  * `-npf`, `--no-profile-file`: Stops the profiler from outputting to a file.

@@ -20,14 +20,16 @@
     <Reference Include="net" />
   </References>
   <Files>
+    <Compile Include="Debugging\_LogThread.cs" />
+    <Compile Include="Debugging\Debug.cs" />
+    <Compile Include="Debugging\Debug.Log.cs" />
+    <Compile Include="Debugging\Debug.Profile.cs" />
+    <Compile Include="Debugging\ProfileBlock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\GameService.cs" />
     <Compile Include="Service\GameServiceManager.cs" />
     <Compile Include="Service\IGameService.cs" />
     <Compile Include="SSCore.cs" />
-    <Compile Include="Utility\_LogThread.cs" />
-    <Compile Include="Utility\Debug.cs" />
-    <Compile Include="Utility\Debug.Log.cs" />
     <Compile Include="Utility\HighResTimer.cs" />
     <Compile Include="Utility\TimeUtils.cs" />
   </Files>

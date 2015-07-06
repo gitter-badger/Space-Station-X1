@@ -42,16 +42,22 @@ namespace SSCyg.Core
 
 				switch (command)
 				{
-					case "-nf":
-					case "--no-file":
+					case "-nlf":
+					case "--no-log-file":
 						{
 							useFile = false;
 						}
 						break;
-					case "-nt":
-					case "--no-thread":
+					case "-nlt":
+					case "--no-log-thread":
 						{
 							useThread = false;
+						}
+						break;
+					case "-npf":
+					case "--no-profile-file":
+						{
+							Debug.UseProfilerFileDump = false;
 						}
 						break;
 					default:
