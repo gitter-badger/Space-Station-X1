@@ -23,7 +23,7 @@ namespace SSCyg.Core.State
 		}
 		#endregion
 
-		public GameState()
+		protected GameState()
 		{
 			IsDisposed = false;
 			_isInitialized = false;
@@ -46,11 +46,6 @@ namespace SSCyg.Core.State
 
 		public virtual void Dispose(bool disposing)
 		{
-			if (disposing)
-			{
-
-			}
-
 			IsDisposed = true;
 		}
 		#endregion

@@ -23,5 +23,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="State\ClientGameState.cs" />
+    <Compile Include="State\ClientGameStateManager.cs" />
   </Files>
 </Project>

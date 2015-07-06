@@ -1,5 +1,7 @@
 ﻿using System;
 using SSCyg.Core;
+using SSCyg.Core.Service;
+using SSCyg.Client.State;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -26,6 +28,9 @@ namespace SSCyg.Client
 		public GraphicsDeviceManager Graphics { get; private set; }
 		// Time delta for the current frame, might move later as well
 		public GameTime Delta { get; private set; }
+
+		// Convinience reference to the state manager
+		ClientGameStateManager _stateManager;
 		#endregion
 
 		public Client() :
@@ -46,6 +51,7 @@ namespace SSCyg.Client
 		{
 			Debug.BeginBlock("BaseInitialization");
 
+			_stateManager = GameServiceManager.Resolve<ClientGameStateManager>();
 			// TODO: Initialization stuff
 
 			base.Initialize();
@@ -67,7 +73,9 @@ namespace SSCyg.Client
 			Debug.BeginFrame();
 			Debug.BeginBlock("BaseUpdate");
 
-			// TODO: Update stuff
+			TimeSpan elapsed = gameTime.ElapsedGameTime;
+
+			_stateManager.Update(elapsed);
 
 			base.Update(gameTime);
 			Debug.EndBlock();
@@ -77,7 +85,9 @@ namespace SSCyg.Client
 		{
 			Debug.BeginBlock("BaseDraw");
 
-			// TODO: Drawing stuff
+			TimeSpan elapsed = gameTime.ElapsedGameTime;
+
+			_stateManager.Draw(elapsed);
 
 			base.Draw(gameTime);
 			Debug.EndBlock();
