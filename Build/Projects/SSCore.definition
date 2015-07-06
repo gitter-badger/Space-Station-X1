@@ -17,6 +17,9 @@
   </References>
   <Files>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\GameService.cs" />
+    <Compile Include="Service\GameServiceManager.cs" />
+    <Compile Include="Service\IGameService.cs" />
     <Compile Include="SSCore.cs" />
     <Compile Include="Utility\_LogThread.cs" />
     <Compile Include="Utility\Debug.cs" />
