@@ -9,10 +9,14 @@
       <Platform Name="Windows">WINDOWS</Platform>
       <Platform Name="Linux">LINUX</Platform>
     </CustomDefinitions>
+    <FrameworkVersions>
+      <Version>v4.5.1</Version>
+    </FrameworkVersions>
   </Properties>
   <References>
     <Reference Include="System" />
     <Reference Include="SSCore" />
+    <Reference Include="net" />
   </References>
   <Files>
     <Compile Include="Program.cs" />

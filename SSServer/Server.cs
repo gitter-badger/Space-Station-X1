@@ -4,6 +4,7 @@ using System.Linq;
 using Stopwatch = System.Diagnostics.Stopwatch;
 using SSCyg.Core;
 using LoopTimer = SSCyg.Server.Utility._ServerLoopTimer;
+using SSCyg.Core.Utility;
 
 namespace SSCyg.Server
 {
@@ -55,6 +56,10 @@ namespace SSCyg.Server
 			// TODO: Eventually load this from a settings file
 			TickRate = 20.0f;
 			ServerRate = 1000.0f / TickRate;
+
+			// Log timing warning
+			if (!HighResTimer.IsHighResolution)
+				Debug.LogWarning("Your system does not support high resolution timing. The server may run at a lower TPS than anticipated.");
 		}
 		~Server()
 		{

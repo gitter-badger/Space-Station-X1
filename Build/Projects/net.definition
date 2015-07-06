@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExternalProject Name="net">
+
+  <!-- This includes the Lidgren.Network networking library. -->
+
+  <Binary Name="Lidgren.Network" Path="ThirdParty/Lidgren.Network.dll" />
+
+</ExternalProject>
