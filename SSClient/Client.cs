@@ -30,7 +30,7 @@ namespace SSCyg.Client
 		public GameTime Delta { get; private set; }
 
 		// Convinience reference to the state manager
-		ClientGameStateManager _stateManager;
+		private ClientGameStateManager _stateManager;
 		#endregion
 
 		public Client() :

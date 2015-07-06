@@ -2,12 +2,12 @@
 using SSCyg.Core;
 using SSCyg.Core.State;
 
-namespace SSCyg.Client.State
+namespace SSCyg.Server.State
 {
-	// Base class for game states on the client side
-	public abstract class ClientGameState : GameState
+	// Base class for game states on the server side
+	public abstract class ServerGameState : GameState
 	{
-		protected ClientGameState()
+		protected ServerGameState()
 		{
 
 		}
@@ -18,16 +18,8 @@ namespace SSCyg.Client.State
 			Update(delta);
 		}
 
-		public void DoDraw(TimeSpan delta)
-		{
-			PreDraw(delta);
-			Draw(delta);
-		}
-
 		protected virtual void PreUpdate(TimeSpan delta) { }
 		protected abstract void Update(TimeSpan delta);
-		protected virtual void PreDraw(TimeSpan delta) { }
-		protected abstract void Draw(TimeSpan delta);
 
 		public override void Dispose(bool disposing)
 		{

@@ -5,6 +5,8 @@ using Stopwatch = System.Diagnostics.Stopwatch;
 using SSCyg.Core;
 using LoopTimer = SSCyg.Server.Utility._ServerLoopTimer;
 using SSCyg.Core.Utility;
+using SSCyg.Core.Service;
+using SSCyg.Server.State;
 
 namespace SSCyg.Server
 {
@@ -42,6 +44,8 @@ namespace SSCyg.Server
 		private readonly List<float> _frameTimes = new List<float>();
 		// Last time the console title was updated
 		private DateTime _lastConsoleUpdate;
+		// Convinience reference to the state manager
+		private ServerGameStateManager _stateManager;
 		#endregion
 
 		// Initializes all of the server services
@@ -73,7 +77,8 @@ namespace SSCyg.Server
 		public void Start()
 		{
 			Debug.BeginBlock("ServerStart");
-			
+
+			_stateManager = GameServiceManager.Resolve<ServerGameStateManager>();
 			// TODO: Starting stuff
 
 			IsActive = true;
@@ -137,7 +142,9 @@ namespace SSCyg.Server
 			Debug.EndBlock(); // "ConsoleUpdate"
 
 			Debug.BeginBlock("BaseUpdate");
-			// TODO: Perform the actual update stuff
+
+			_stateManager.Update(TimeSpan.FromMilliseconds(elapsedMilliseconds));
+
 			Debug.EndBlock(); // "BaseUpdate"
 
 			Debug.EndFrame();
