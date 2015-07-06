@@ -30,6 +30,9 @@
     <Compile Include="Service\GameServiceManager.cs" />
     <Compile Include="Service\IGameService.cs" />
     <Compile Include="SSCore.cs" />
+    <Compile Include="State\GameState.cs" />
+    <Compile Include="State\GameStateManager.cs" />
+    <Compile Include="State\IGameState.cs" />
     <Compile Include="Utility\HighResTimer.cs" />
     <Compile Include="Utility\TimeUtils.cs" />
   </Files>
