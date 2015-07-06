@@ -1,5 +1,5 @@
 ﻿using System;
-using Timer = System.Timers.Timer;
+using Timer = SSCyg.Core.Utility.HighResTimer;
 using AutoResetEvent = System.Threading.AutoResetEvent;
 
 namespace SSCyg.Server.Utility
@@ -12,10 +12,10 @@ namespace SSCyg.Server.Utility
 		private Timer _timer;
 		private AutoResetEvent _are;
 
-		public _ServerLoopTimer(MainServerLoop loop, uint period)
+		public _ServerLoopTimer(float period)
 		{
 			_timer = new Timer(period);
-			_timer.Elapsed += (sender, e) => { loop(); };
+			_timer.Elapsed += () => { Set(); };
 			_are = new AutoResetEvent(true);
 			_timer.Enabled = true;
 		}

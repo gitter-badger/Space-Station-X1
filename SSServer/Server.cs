@@ -72,7 +72,7 @@ namespace SSCyg.Server
 		public void MainLoop()
 		{
 			// Try to run the loop every 1 msec
-			_loopTimer = new LoopTimer(() => { RunLoop(); }, 1);
+			_loopTimer = new LoopTimer(1.0f);
 			_stopwatch.Start();
 
 			// Wait for the event to be signaled and try to run the loop
@@ -84,12 +84,6 @@ namespace SSCyg.Server
 			}
 		}
 
-		// Sets the event to cause the loop to run
-		public void RunLoop()
-		{
-			_loopTimer.Set();
-		}
-		
 		// The actual main loop
 		private void mainLoopStuff()
 		{

@@ -21,6 +21,7 @@
     <Compile Include="Utility\_LogThread.cs" />
     <Compile Include="Utility\Debug.cs" />
     <Compile Include="Utility\Debug.Log.cs" />
+    <Compile Include="Utility\HighResTimer.cs" />
     <Compile Include="Utility\TimeUtils.cs" />
   </Files>
 </Project>
