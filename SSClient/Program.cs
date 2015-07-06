@@ -22,7 +22,7 @@ namespace SSCyg.Client
 			}
 			catch (Exception e)
 			{
-				Debug.Log(LogLevel.Fatal, "A runtime exception was caught and unhandled.");
+				Debug.Log(LogLevel.Fatal, "A runtime exception was caught and was unhandled.");
 				Debug.LogException(e);
 				bool ok = Debug.ShowErrorBox("Unhandled Exception", "\"" + e.Message + "\"\n" + e.StackTrace.Replace("\n", "\n\t"));
 				Debug.Log("User pressed " + (ok ? "OK" : "CANCEL") + " for the error window.");

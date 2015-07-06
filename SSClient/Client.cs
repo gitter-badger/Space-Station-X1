@@ -1,4 +1,5 @@
 ﻿using System;
+using SSCyg.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -9,7 +10,16 @@ namespace SSCyg.Client
 	public sealed class Client : Game
 	{
 		// The instance of the client
-		public static Client TheClient { get; private set; }
+		private static Client _theClient = null;
+		public static Client TheClient
+		{
+			get
+			{
+				if (_theClient == null)
+					Debug.Throw(new NullReferenceException("Client singleton has not been initialized."));
+				return _theClient;
+			}
+		}
 
 		#region Members
 		// Temporary graphics device reference, will move later
@@ -21,7 +31,7 @@ namespace SSCyg.Client
 		public Client() :
 			base()
 		{
-			TheClient = this;
+			_theClient = this;
 
 			Graphics = new GraphicsDeviceManager(this);
 			Graphics.PreferredBackBufferWidth = 1600;
