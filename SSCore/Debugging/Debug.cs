@@ -13,6 +13,7 @@ namespace SSCyg.Core
 		{
 			currentBlock = rootBlock = new Debugging.ProfileBlock(null, "Root");
 			TotalFrames = 0;
+			UseProfilerFileDump = true;
 		}
 
 		#region Message Boxes

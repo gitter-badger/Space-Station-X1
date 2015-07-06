@@ -85,6 +85,9 @@ namespace SSCyg.Core
 			if (!initialized)
 				Debug.Throw(new InvalidOperationException("Cannot shutdown the core library more than once."));
 
+			if (Debug.UseProfilerFileDump)
+				Debug.DumpProfilerToFile();
+
 			Debug.CloseLogger();
 
 			initialized = false;

@@ -44,22 +44,44 @@ namespace SSCyg.Client
 
 		protected override void Initialize()
 		{
+			Debug.BeginBlock("BaseInitialization");
+
+			// TODO: Initialization stuff
+
 			base.Initialize();
+			Debug.EndBlock();
 		}
 
 		protected override void LoadContent()
 		{
+			Debug.BeginBlock("BaseLoadContent");
+
+			// TODO: Content loading stuff
+
 			base.LoadContent();
+			Debug.EndBlock();
 		}
 
 		protected override void Update(GameTime gameTime)
 		{
+			Debug.BeginFrame();
+			Debug.BeginBlock("BaseUpdate");
+
+			// TODO: Update stuff
+
 			base.Update(gameTime);
+			Debug.EndBlock();
 		}
 
 		protected override void Draw(GameTime gameTime)
 		{
+			Debug.BeginBlock("BaseDraw");
+
+			// TODO: Drawing stuff
+
 			base.Draw(gameTime);
+			Debug.EndBlock();
+			Debug.EndFrame();
 		}
 
 		protected override void OnExiting(object sender, EventArgs args)

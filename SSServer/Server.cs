@@ -47,6 +47,7 @@ namespace SSCyg.Server
 		// Initializes all of the server services
 		public Server()
 		{
+			Debug.BeginBlock("ServerConstructor");
 			_theServer = this;
 
 			IsActive = false;
@@ -60,6 +61,8 @@ namespace SSCyg.Server
 			// Log timing warning
 			if (!HighResTimer.IsHighResolution)
 				Debug.LogWarning("Your system does not support high resolution timing. The server may run at a lower TPS than anticipated.");
+
+			Debug.EndBlock();
 		}
 		~Server()
 		{
@@ -69,7 +72,12 @@ namespace SSCyg.Server
 		// Loads in the server settings and opens the server for connections
 		public void Start()
 		{
+			Debug.BeginBlock("ServerStart");
+			
+			// TODO: Starting stuff
+
 			IsActive = true;
+			Debug.EndBlock();
 		}
 
 		#region Server Loop
@@ -92,13 +100,21 @@ namespace SSCyg.Server
 		// The actual main loop
 		private void mainLoopStuff()
 		{
+			Debug.BeginBlock("ServerMainLoop");
+
 			float elapsedTime, elapsedMilliseconds;
 			elapsedTime = (_stopwatch.ElapsedTicks / (float)Stopwatch.Frequency);
 			elapsedMilliseconds = elapsedTime * 1000;
 
 			// Return out if we are not ready for another update
 			if (elapsedMilliseconds < ServerRate && (ServerRate - elapsedMilliseconds) >= 0.5f)
+			{
+				Debug.EndBlock(); // "ServerMainLoop"
 				return;
+			}
+
+			Debug.BeginFrame();
+			Debug.BeginBlock("ConsoleUpdate");
 			_stopwatch.Restart();
 
 			ServerClock += elapsedTime;
@@ -118,8 +134,14 @@ namespace SSCyg.Server
 				Console.Title = String.Format("TPS: {0:N2} | Net: (TODO) | Memory: {1:N0} KiB", tps, mem);
 				_lastConsoleUpdate = DateTime.Now;
 			}
+			Debug.EndBlock(); // "ConsoleUpdate"
 
+			Debug.BeginBlock("BaseUpdate");
 			// TODO: Perform the actual update stuff
+			Debug.EndBlock(); // "BaseUpdate"
+
+			Debug.EndFrame();
+			Debug.EndBlock(); // "ServerMainLoop"
 		}
 		#endregion
 

@@ -36,12 +36,12 @@ namespace SSCyg.Core
 			}
 		}
 
-		internal static void BeginFrame()
+		public static void BeginFrame()
 		{
 			EndFrame();
 			BeginBlock("BaseFrame");
 		}
-		internal static void EndFrame()
+		public static void EndFrame()
 		{
 			if (currentBlock != rootBlock)
 			{
@@ -67,6 +67,8 @@ namespace SSCyg.Core
 					writer.Write(GetProfilerString());
 				}
 			}
+
+			Debug.LogSys("Dumped Profiler information to a file.");
 		}
 
 		public static string GetProfilerString()
